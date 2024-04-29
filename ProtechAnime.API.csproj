@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProtechAnime.Application\ProtechAnime.Application.csproj" />
+    <ProjectReference Include="..\ProtechAnime.Infrastructure\ProtechAnime.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
