@@ -12,6 +12,5 @@ namespace ProtechAnime.Domain.Entities
         public string? Nome { get; set; }
         public string? Resumo { get; set; }
         public string? Diretor { get; set; }
-        public bool IsDeleted { get; set; } = false; 
     }
 }

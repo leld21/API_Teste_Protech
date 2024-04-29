@@ -17,6 +17,11 @@ namespace AnimeProtech.Infrastructure.Repositories
             _context = context;
         }
 
+        public async Task<Anime> GetAnimeAsync(int id)
+        {
+            return await _context.Animes.FindAsync(id);
+        }
+
         public async Task<List<Anime>> GetAnimesAsync(string diretor, string nome, string keyword, int pageIndex, int pageSize)
         {
             var query = _context.Animes.AsQueryable();

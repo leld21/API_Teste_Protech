@@ -23,6 +23,11 @@ namespace ProtechAnime.Application.Services
             return await _animeRepository.GetAnimesAsync(director, name, keyword, pageIndex, pageSize);
         }
 
+        public async Task<Anime> GetAnimeAsync(int id)
+        {
+            return await _animeRepository.GetAnimeAsync(id);
+        }
+
         public async Task<int> GetTotalCountAsync(string director, string name, string keyword)
         {
             return await _animeRepository.GetTotalCountAsync(director, name, keyword);

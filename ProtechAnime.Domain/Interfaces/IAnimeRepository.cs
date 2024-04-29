@@ -10,6 +10,7 @@ namespace ProtechAnime.Domain.Interfaces
     public interface IAnimeRepository
     {
         Task<List<Anime>> GetAnimesAsync(string diretor, string nome, string keyword, int pageIndex, int pageSize);
+        Task<Anime> GetAnimeAsync(int id);
         Task<int> GetTotalCountAsync(string diretor, string nome, string keyword);
     }
 }

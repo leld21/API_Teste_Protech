@@ -10,6 +10,7 @@ namespace ProtechAnime.Application.Services
     public interface IAnimeService
     {
         Task<List<Anime>> GetAnimesAsync(string diretor, string nome, string keyword, int pageIndex, int pageSize);
+        Task<Anime> GetAnimeAsync(int id);
         Task<int> GetTotalCountAsync(string diretor, string nome, string keyword);
     }
 }

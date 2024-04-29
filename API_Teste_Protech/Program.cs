@@ -1,4 +1,7 @@
-using API_Teste_Protech.Controllers;
+using AnimeProtech.Infrastructure.Repositories;
+using ProtechAnime.API.Controllers;
+using ProtechAnime.Application.Services;
+using ProtechAnime.Domain.Interfaces;
 using ProtechAnime.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddScoped<IAnimeService, AnimeService>();
+builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 builder.Services.AddInfrastructure();
 
 var app = builder.Build();
