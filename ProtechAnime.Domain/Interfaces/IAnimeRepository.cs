@@ -11,6 +11,10 @@ namespace ProtechAnime.Domain.Interfaces
     {
         Task<List<Anime>> GetAnimesAsync(string diretor, string nome, string keyword, int pageIndex, int pageSize);
         Task<Anime> GetAnimeAsync(int id);
+        Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int modo);
+        Task<int?> CreateAnimeAsync(Anime anime);
+        Task<Anime> UpdateAnimeAsync(Anime anime);
+        Task<Anime> LogicalDeleteAsync(Anime anime);
         Task<int> GetTotalCountAsync(string diretor, string nome, string keyword);
     }
 }

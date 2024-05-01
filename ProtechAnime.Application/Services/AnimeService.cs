@@ -28,6 +28,25 @@ namespace ProtechAnime.Application.Services
             return await _animeRepository.GetAnimeAsync(id);
         }
 
+        public async Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int modo)
+        {
+            return await _animeRepository.GetAnimesFilteredAsync(filtro, modo);
+        }
+        public async Task<int?> CreateAnimeAsync(Anime anime)
+        {
+            return await _animeRepository.CreateAnimeAsync(anime);
+        }
+
+        public async Task<Anime> UpdateAnimeAsync(Anime anime)
+        {
+            return await _animeRepository.UpdateAnimeAsync(anime);
+        }
+        public async Task<Anime> LogicalDeleteAsync(Anime anime)
+        {
+            return await _animeRepository.LogicalDeleteAsync(anime);
+        }
+
+
         public async Task<int> GetTotalCountAsync(string director, string name, string keyword)
         {
             return await _animeRepository.GetTotalCountAsync(director, name, keyword);
