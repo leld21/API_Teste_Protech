@@ -14,7 +14,7 @@ namespace ProtechAnime.Infrastructure.Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:teste-protech.database.windows.net,1433;Initial Catalog=banco-protech;Persist Security Info=False;User ID=teste-protech;Password=I99Dn^y}k|:8;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("{connectin-string}");
         }
 
     }
