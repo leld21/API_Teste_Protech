@@ -30,12 +30,14 @@ namespace AnimeProtech.Infrastructure.Repositories
             return null;
         }
 
-        public async Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int modo)
+        public async Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int indicePagina, int itemsPagina, int modo)
         {
             var animes = new List<Anime>(); 
             if(modo == 1)
             {
-                animes.Add(await _context.Animes.FirstOrDefaultAsync(a => a.Nome == filtro && a.Ativo == true));
+                animes = await _context.Animes
+                    .Where(a => a.Nome.Contains(filtro) && a.Ativo == true)
+                    .ToListAsync();
             }
             else if (modo == 2)
             {

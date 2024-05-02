@@ -28,9 +28,13 @@ namespace ProtechAnime.Application.Services
             return await _animeRepository.GetAnimeAsync(id);
         }
 
-        public async Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int modo)
+        public async Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int indicePagina, int itemsPagina, int modo)
         {
-            return await _animeRepository.GetAnimesFilteredAsync(filtro, modo);
+            var animes = await _animeRepository.GetAnimesFilteredAsync(filtro, indicePagina, itemsPagina, modo);
+            int indicePaginaInicial = (indicePagina - 1) * itemsPagina;
+
+            animes = animes.Skip(indicePaginaInicial).Take(itemsPagina).ToList();
+            return animes;
         }
         public async Task<int?> CreateAnimeAsync(Anime anime)
         {

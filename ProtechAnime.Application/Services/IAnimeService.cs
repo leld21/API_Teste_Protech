@@ -13,7 +13,7 @@ namespace ProtechAnime.Application.Services
         Task<Anime> GetAnimeAsync(int id);
         Task<Anime> UpdateAnimeAsync(Anime anime);
         Task<int?> CreateAnimeAsync(Anime anime);
-        Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int modo);
+        Task<List<Anime>> GetAnimesFilteredAsync(string filtro, int indicePagina, int itemsPagina, int modo);
         Task<Anime> LogicalDeleteAsync(Anime anime);
         Task<int> GetTotalCountAsync(string diretor, string nome, string keyword);
     }
